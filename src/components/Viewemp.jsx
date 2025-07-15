@@ -14,7 +14,7 @@ const Viewemp = () => {
             (req) => {
                 Newemp(req.data)
             }
-        ).catch()
+        ).catch(err => console.error("Error fetching data:", err))
     }
     useEffect(() => { fetchData() }, [])
     return (
@@ -30,12 +30,12 @@ const Viewemp = () => {
                                             <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        {value.id}
+                                                        Emp id: {value.id}
                                                     </div>
                                                     <ul class="list-group list-group-flush">
-                                                        <li class="list-group-item">{value.employee_name}</li>
-                                                        <li class="list-group-item">{value.employee_salary}</li>
-                                                        <li class="list-group-item">{value.employee_age}</li>
+                                                        <li class="list-group-item">Name: {value.employee_name}</li>
+                                                        <li class="list-group-item">Salary: {value.employee_salary}</li>
+                                                        <li class="list-group-item">Age: {value.employee_age}</li>
                                                     </ul>
                                                 </div>
                                             </div>
